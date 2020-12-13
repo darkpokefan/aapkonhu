@@ -14,6 +14,8 @@ from telegram.utils.helpers import mention_html
 
 from meme_bot import CallbackContext, dispatcher
 
+combot_stickers_url = "https://combot.org/telegram/stickers?q="
+
 
 def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
