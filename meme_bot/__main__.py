@@ -23,8 +23,11 @@ IMPORTED = {}
 
 START_TEXT = """
 Hey fam! I'm {}, and I'm here to bring some funny maymays into your life!
+
 Check out /help for a full list of my commands with detailed descriptions.
-You can also check out the sourcecode for the bot [here](https://github.com/HitsukiNetwork/MemeBot)
+
+You can check out my sourcecode [here](https://github.com/HitsukiNetwork/MemeBot)
+You can also follow the news channel: @HitsukiNews
 """.format(
     dispatcher.bot.first_name
 )
@@ -48,8 +51,6 @@ Well, here you go.
     *- sends a random chinese meme. if you add a number after the command, itll reply with a specific photo.*
  - `/forbes`: - _<reply>_
     *- turns a message into a Forbes headline.*
- - `me too`:
-    *- Saying "me too" will have a small chance for the bot to make a remark.*
  - `/mock`: - _<reply>_
     *- mocks a replied message lick the spongebob meme.*
  - `/owo`: - _<reply>_

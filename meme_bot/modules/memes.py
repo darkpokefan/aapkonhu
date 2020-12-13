@@ -20,7 +20,7 @@ from spongemock import spongemock
 from zalgo_text import zalgo
 
 from telegram import Bot, Message, MessageEntity, Update, User
-from telegram.ext import CommandHandler, RegexHandler, run_async
+from telegram.ext import CommandHandler, run_async
 from telegram.error import BadRequest
 
 from meme_bot import DEEPFRY_TOKEN, CallbackContext, dispatcher
@@ -192,16 +192,6 @@ def vapor(update: Update, context: CallbackContext) -> str:
         message.reply_to_message.reply_text(reply_text)
 
 
-def me_too(update: Update, context: CallbackContext):
-    bot = context.bot
-    message = update.effective_message
-    if random.randint(0, 100) > 60:
-        reply = random.choice(
-            ["Me too thanks", "Haha yes, me too", "Same lol", "Me irl"]
-        )
-        message.reply_text(reply)
-
-
 # D A N K modules by @deletescape ^^^
 # Less D A N K modules by @skittles9823 # holi fugg I did some maymays vvv
 
@@ -347,7 +337,6 @@ MOCK_HANDLER = CommandHandler("mock", spongemocktext, run_async=True)
 ZALGO_HANDLER = CommandHandler("zalgofy", zalgotext, run_async=True)
 FORBES_HANDLER = CommandHandler("forbes", forbesify, run_async=True)
 DEEPFRY_HANDLER = CommandHandler("deepfry", deepfryer, run_async=True)
-ME_TOO_THANKS_HANDLER = RegexHandler(r"(?i)me too", me_too, run_async=True)
 CHINESEMEMES_HANDLER = CommandHandler(
     "dllm", chinesememes, pass_args=True, run_async=True
 )
@@ -362,5 +351,4 @@ dispatcher.add_handler(MOCK_HANDLER)
 dispatcher.add_handler(ZALGO_HANDLER)
 dispatcher.add_handler(FORBES_HANDLER)
 dispatcher.add_handler(DEEPFRY_HANDLER)
-dispatcher.add_handler(ME_TOO_THANKS_HANDLER)
 dispatcher.add_handler(CHINESEMEMES_HANDLER)
