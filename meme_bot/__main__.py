@@ -73,26 +73,30 @@ Well, here you go.
 
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("meme_bot.modules." + module_name)
+    imported_module = importlib.import_module(
+        "meme_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
     if not imported_module.__mod_name__.lower() in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
     else:
-        raise Exception("Can't have two modules with the same name! Please change one")
+        raise Exception(
+            "Can't have two modules with the same name! Please change one")
 
 
 def start(update: Update, context: CallbackContext):
     if update.effective_chat.type == "private":
-        update.effective_message.reply_text(START_TEXT, parse_mode=ParseMode.MARKDOWN)
+        update.effective_message.reply_text(
+            START_TEXT, parse_mode=ParseMode.MARKDOWN)
     else:
         update.effective_message.reply_text("Waow sur, you've UwU-ken me :3")
 
 
 def help(update: Update, context: CallbackContext):
     if update.effective_chat.type == "private":
-        update.effective_message.reply_text(HELP_TEXT, parse_mode=ParseMode.MARKDOWN)
+        update.effective_message.reply_text(
+            HELP_TEXT, parse_mode=ParseMode.MARKDOWN)
     else:
         update.effective_message.reply_text(
             "Try this command again in a private message."
@@ -111,7 +115,8 @@ def main():
         updater.start_webhook(listen=LISTEN, port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
-            updater.bot.set_webhook(url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
+            updater.bot.set_webhook(
+                url=URL + TOKEN, certificate=open(CERT_PATH, "rb"))
         else:
             updater.bot.set_webhook(url=URL + TOKEN)
 

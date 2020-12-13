@@ -1,3 +1,11 @@
+from meme_bot import DEEPFRY_TOKEN, CallbackContext, dispatcher
+from telegram.error import BadRequest
+from telegram.ext import CommandHandler, run_async
+from telegram import Bot, Message, MessageEntity, Update, User
+from zalgo_text import zalgo
+from spongemock import spongemock
+from PIL import Image
+from deeppyer import deepfry
 import asyncio
 import io
 import os
@@ -14,16 +22,6 @@ import nltk  # shitty lib, but it does work
 nltk.download("punkt")
 nltk.download("averaged_perceptron_tagger")
 
-from deeppyer import deepfry
-from PIL import Image
-from spongemock import spongemock
-from zalgo_text import zalgo
-
-from telegram import Bot, Message, MessageEntity, Update, User
-from telegram.ext import CommandHandler, run_async
-from telegram.error import BadRequest
-
-from meme_bot import DEEPFRY_TOKEN, CallbackContext, dispatcher
 
 MAXNUMURL = "https://raw.githubusercontent.com/atanet90/expression-pack/master/meta"
 WIDE_MAP = dict((i, i + 0xFEE0) for i in range(0x21, 0x7F))
@@ -32,6 +30,8 @@ WIDE_MAP[0x20] = 0x3000
 # D A N K modules by @deletescape vvv
 
 # based on https://github.com/wrxck/mattata/blob/master/plugins/copypasta.mattata
+
+
 def copypasta(update: Update, context: CallbackContext):
     bot = context.bot
     message = update.effective_message
@@ -164,7 +164,8 @@ def stretch(update: Update, context: CallbackContext):
     else:
         count = random.randint(3, 10)
         reply_text = re.sub(
-            r"([aeiouAEIOUａｅｉｏｕＡＥＩＯＵ])", (r"\1" * count), message.reply_to_message.text
+            r"([aeiouAEIOUａｅｉｏｕＡＥＩＯＵ])", (r"\1" *
+                                          count), message.reply_to_message.text
         )
         message.reply_to_message.reply_text(reply_text)
 
@@ -175,7 +176,8 @@ def vapor(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     if not message.reply_to_message:
         if not args:
-            message.reply_text("I need a message to convert to vaporwave text.")
+            message.reply_text(
+                "I need a message to convert to vaporwave text.")
         else:
             noreply = True
             data = message.text.split(None, 1)[1]
@@ -305,7 +307,8 @@ def deepfryer(update: Update, context: CallbackContext):
 
     # the following needs to be executed async (because dumb lib)
     loop = asyncio.new_event_loop()
-    loop.run_until_complete(process_deepfry(image, message.reply_to_message, bot))
+    loop.run_until_complete(process_deepfry(
+        image, message.reply_to_message, bot))
     loop.close()
 
 
