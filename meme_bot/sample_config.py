@@ -1,13 +1,14 @@
 class Config(object):
     LOGGER = True
 
-    API_KEY = "Bot token goes here"
+    API_KEY = "BOT TOKEN HERE"
     WEBHOOK = False
-    LISTEN = "127.0.0.1" #ip to losten for webhooks
+    LISTEN = "127.0.0.1"  # IP to listen for webhooks
     URL = None
     CERT_PATH = None
     PORT = 5000
-    DEEPFRY_TOKEN = None # Used for facial recognition in the deepfry command
+    DEEPFRY_TOKEN = None  # Used for Deepfry facial recognition
+
 
 class Production(Config):
     LOGGER = False

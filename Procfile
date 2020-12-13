@@ -1,1 +1,1 @@
-web: python3 -m skitt_bot
+web: python3 -m meme_bot

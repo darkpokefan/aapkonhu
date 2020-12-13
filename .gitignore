@@ -1,6 +1,8 @@
-/skitt_bot/config.py
+/meme_bot/config.py
 *.pyc
 .idea/
-/skitt_bot/.vscode/*
+/meme_bot/.vscode/*
 /.vscode/*
 bob.jpg
+kangsticker.*
+sticker.*

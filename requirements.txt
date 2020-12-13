@@ -1,6 +1,8 @@
-python-telegram-bot>=10.1.0
+aiohttp[speedups]
+bs4
+nltk
+Pillow
+python-telegram-bot==13.1.0
+requests
 spongemock
 zalgo-text
-nltk
-aiohttp>=2.2.5
-Pillow>=4.2.0
