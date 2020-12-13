@@ -1,7 +1,7 @@
 from meme_bot import DEEPFRY_TOKEN, CallbackContext, dispatcher
 from telegram.error import BadRequest
-from telegram.ext import CommandHandler, run_async
-from telegram import Bot, Message, MessageEntity, Update, User
+from telegram.ext import CommandHandler
+from telegram import Bot, Message, Update
 from zalgo_text import zalgo
 from spongemock import spongemock
 from PIL import Image

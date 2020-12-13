@@ -2,8 +2,8 @@ import base64
 from io import BytesIO
 from PIL import Image
 
-from telegram import Message, Update, Bot, User
-from telegram.ext import run_async, CommandHandler
+from telegram import Update
+from telegram.ext import CommandHandler
 
 from meme_bot.modules.thonkify_dict import thonkifydict
 from meme_bot import CallbackContext, dispatcher

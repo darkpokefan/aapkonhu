@@ -1,8 +1,7 @@
-import telegram
 import importlib
 
-from telegram import Update, Bot, ParseMode
-from telegram.ext import CommandHandler, run_async
+from telegram import Update, ParseMode
+from telegram.ext import CommandHandler
 
 from meme_bot.modules import ALL_MODULES
 from meme_bot import (
