@@ -24,7 +24,7 @@ IMPORTED = {}
 START_TEXT = """
 Hey fam! I'm {}, and I'm here to bring some funny maymays into your life!
 Check out /help for a full list of my commands with detailed descriptions.
-You can also check out the sourcecode for the bot [here](https://github.com/skittles9823/meme_bot)
+You can also check out the sourcecode for the bot [here](https://github.com/HitsukiNetwork/MemeBot)
 """.format(
     dispatcher.bot.first_name
 )
@@ -62,6 +62,12 @@ Well, here you go.
     *- turns a message into vaporwave text.*
  - `/zalgofy`: - _<reply>_
     *- corrupts a message.*
+ - `/kang`: - _<reply>_
+    *- Kang a sticker or animated sticker.*
+ - `/stickerid`: - _<reply>_
+    *- Check stickerid.*
+ - `/getsticker`: - _<reply>_
+    *- Get sticker file.*
 """
 
 
