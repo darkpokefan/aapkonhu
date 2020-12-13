@@ -7,7 +7,6 @@ from telegram.ext import CommandHandler, run_async
 from meme_bot.modules import ALL_MODULES
 from meme_bot import (
     dispatcher,
-    logger,
     updater,
     TOKEN,
     WEBHOOK,
@@ -16,8 +15,7 @@ from meme_bot import (
     PORT,
     URL,
     CallbackContext,
-    logger,
-)
+    logger)
 
 IMPORTED = {}
 
