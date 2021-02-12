@@ -1,7 +1,7 @@
 class Config(object):
     LOGGER = True
 
-    API_KEY = "BOT TOKEN HERE"
+    API_KEY = "1641418718:AAEAo0AmK5u88LzXXG7crQSQeXvHIOrZngw"
     WEBHOOK = False
     LISTEN = "127.0.0.1"  # IP to listen for webhooks
     URL = None
