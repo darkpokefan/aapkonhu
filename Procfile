@@ -1,1 +1,1 @@
-worker: python3 -m memebot
+worker: python3 -m meme_bot
